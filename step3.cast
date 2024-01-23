@@ -1,0 +1,11 @@
+{"version": 2, "width": 120, "height": 30, "timestamp": 1706028546, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.010135, "o", "\u001b[?2004h\u001b]0;artemy@MY-COMPUTER: ~/new_folder/python-project-50\u0007\u001b[01;32martemy@MY-COMPUTER\u001b[00m:\u001b[01;34m~/new_folder/python-project-50\u001b[00m$ "]
+[2.125658, "o", "\u001b[7mgendiff tests/fixtures/file1.json tests/fixtures/file2.json\u001b[27m"]
+[3.989103, "o", "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cgendiff tests/fixtures/file1.json tests/fixtures/file2.json\r\n\u001b[?2004l\r"]
+[4.004222, "o", "{\r\n- follow: false\r\n  host: hexlet.io\r\n- proxy: 123.234.53.22\r\n- timeout: 50\r\n+ timeout: 20\r\n+ verbose: true\r\n}\r\n"]
+[4.006644, "o", "\u001b[?2004h\u001b]0;artemy@MY-COMPUTER: ~/new_folder/python-project-50\u0007\u001b[01;32martemy@MY-COMPUTER\u001b[00m:\u001b[01;34m~/new_folder/python-project-50\u001b[00m$ "]
+[6.389393, "o", "e"]
+[6.741776, "o", "x"]
+[6.869315, "o", "i"]
+[6.998162, "o", "t"]
+[7.285781, "o", "\r\n\u001b[?2004l\rexit\r\n"]
