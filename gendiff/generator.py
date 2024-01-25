@@ -1,9 +1,9 @@
-import json
+import gendiff
 
 
 def generate_diff(file1_path, file2_path):
-    data1 = json.load(open(file1_path))
-    data2 = json.load(open(file2_path))
+    data1 = gendiff.extract_data(file1_path)
+    data2 = gendiff.extract_data(file2_path)
     diff = []
 
     def to_str(smth):
