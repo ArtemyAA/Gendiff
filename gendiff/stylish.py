@@ -1,37 +1,45 @@
 def convert(value):
     if isinstance(value, bool):
         return str(value).lower()
-    if value is None:
+    elif value is None:
         return 'null'
     return value
 
 
-def get_children(directory):
-    if directory.get('status') == 'directory':
-        return directory.get('content')
-    return None
+def dict_to_string(data, depth=0, space_count=4, fullfill=' '):
+    if not isinstance(data, dict):
+        return data
+    result = ['{']
+    space = fullfill * depth * space_count
+    depth += 1
+    for key, value in data.items():
+        result.append(f"{space}    {key}: {dict_to_string(value, depth)}")
+    result.append(f'{space}{"}"}')
+    return '\n'.join(result)
 
-
-def stylize(diff_tree, depth=0, fullfull='.'):
-    result = []
+def stylize(diff_tree, depth=0, space_count=4, fullfill=' '): # noqa C901
+    result = ['{']
+    indent = space_count * depth
+    space = indent * fullfill
+    depth += 1
     for key, element in diff_tree.items():
-        current_depth = depth
-        indent = current_depth * 4 - 2
-        space = indent * fullfull
-        if element['status'] == 'added':
-            result.append(f'{space}+ {key}: {convert(element["content"])}')
-        elif element['status'] == 'removed':
-            result.append(f'{space}- {key}: {convert(element["content"])}')
-        elif element['status'] == 'changed':
-            result.append(f'{space}- {key}: {convert(element["from"])}')
-            result.append(f'{space}+ {key}: {convert(element["to"])}')
-        elif element['status'] == 'unchanged':
-            result.append(f'{space}  {key}: {convert(element["content"])}')
-        elif element['status'] == 'directory':
-            one_step = get_children(element)
-            if one_step:
-                current_depth += 1
-                result.append(f'{space}{key}: ')
-                result.append(stylize(one_step, current_depth, fullfull))
-    result_to_convert = '\n'.join(result)
-    return f'{{\n{result_to_convert}\n}}'
+        element_status = element.get('status')
+        value = convert(element.get('content'))
+        value_from = convert(element.get('from'))
+        value_to = convert(element.get('to'))
+        if element_status == 'directory':
+            result.append(
+                f"{space}    {key}: {stylize(value, depth)}")
+        elif element_status == 'added':
+            result.append(f'{space}  + {key}: {dict_to_string(value, depth)}')
+        elif element_status == 'removed':
+            result.append(f'{space}  - {key}: {dict_to_string(value, depth)}')
+        elif element_status == 'changed':
+            result.append(f'{space}  - {key}: {dict_to_string(value_from, depth)}') # noqa E501
+            result.append(f'{space}  + {key}: {dict_to_string(value_to, depth)}') # noqa E501
+        elif element_status == 'unchanged':
+            result.append(f'{space}    {key}: {dict_to_string(value, depth)}')
+        else:
+            raise ValueError
+    result.append(space + '}')
+    return '\n'.join(result)
