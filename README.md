@@ -18,6 +18,10 @@
 
 [![asciicast](https://asciinema.org/a/633254.svg)](https://asciinema.org/a/633254)
 
-### Parsing trees
+#### Parsing trees
 
 [![asciicast](https://asciinema.org/a/634501.svg)](https://asciinema.org/a/634501)
+
+### PLAIN format for trees
+
+[![asciicast](https://asciinema.org/a/634774.svg)](https://asciinema.org/a/634774)

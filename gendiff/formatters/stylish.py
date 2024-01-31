@@ -17,6 +17,7 @@ def dict_to_string(data, depth=0, space_count=4, fullfill=' '):
     result.append(f'{space}{"}"}')
     return '\n'.join(result)
 
+
 def stylize(diff_tree, depth=0, space_count=4, fullfill=' '): # noqa C901
     result = ['{']
     indent = space_count * depth

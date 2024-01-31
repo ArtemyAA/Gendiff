@@ -38,3 +38,11 @@ def test_for_trees_yaml(fixtures_path):
     answer = os.path.join(fixtures_path, 'answer_trees.txt')
     expected = open(answer, 'r')
     assert generate_diff(first_file, second_file) == expected.read()
+
+
+def test_for_plain_format(fixtures_path):
+    first_file = os.path.join(fixtures_path, "tree1.yaml")
+    second_file = os.path.join(fixtures_path, "tree2.yaml")
+    answer = os.path.join(fixtures_path, 'answer_plain.txt')
+    expected = open(answer, 'r')
+    assert generate_diff(first_file, second_file, format='plain') == expected.read()
