@@ -40,7 +40,5 @@ def stylize(diff_tree, depth=0, space_count=4, fullfill=' '): # noqa C901
             result.append(f'{space}  + {key}: {dict_to_string(value_to, depth)}') # noqa E501
         elif element_status == 'unchanged':
             result.append(f'{space}    {key}: {dict_to_string(value, depth)}')
-        else:
-            raise ValueError
     result.append(space + '}')
     return '\n'.join(result)
