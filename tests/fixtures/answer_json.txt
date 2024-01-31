@@ -1,0 +1,98 @@
+{
+    "common": {
+        "status": "directory",
+        "content": {
+            "follow": {
+                "status": "added",
+                "content": false
+            },
+            "setting1": {
+                "status": "unchanged",
+                "content": "Value 1"
+            },
+            "setting2": {
+                "status": "removed",
+                "content": 200
+            },
+            "setting3": {
+                "status": "changed",
+                "from": true,
+                "to": null
+            },
+            "setting4": {
+                "status": "added",
+                "content": "blah blah"
+            },
+            "setting5": {
+                "status": "added",
+                "content": {
+                    "key5": "value5"
+                }
+            },
+            "setting6": {
+                "status": "directory",
+                "content": {
+                    "doge": {
+                        "status": "directory",
+                        "content": {
+                            "wow": {
+                                "status": "changed",
+                                "from": "",
+                                "to": "so much"
+                            }
+                        }
+                    },
+                    "key": {
+                        "status": "unchanged",
+                        "content": "value"
+                    },
+                    "ops": {
+                        "status": "added",
+                        "content": "vops"
+                    }
+                }
+            }
+        }
+    },
+    "group1": {
+        "status": "directory",
+        "content": {
+            "baz": {
+                "status": "changed",
+                "from": "bas",
+                "to": "bars"
+            },
+            "foo": {
+                "status": "unchanged",
+                "content": "bar"
+            },
+            "nest": {
+                "status": "changed",
+                "from": {
+                    "key": "value"
+                },
+                "to": "str"
+            }
+        }
+    },
+    "group2": {
+        "status": "removed",
+        "content": {
+            "abc": 12345,
+            "deep": {
+                "id": 45
+            }
+        }
+    },
+    "group3": {
+        "status": "added",
+        "content": {
+            "deep": {
+                "id": {
+                    "number": 45
+                }
+            },
+            "fee": 100500
+        }
+    }
+}

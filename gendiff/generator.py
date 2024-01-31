@@ -9,4 +9,6 @@ def generate_diff(file1_path, file2_path, format='stylish'):
         style = gendiff.stylize(diff)
     elif format == 'plain':
         style = gendiff.plainize(diff)
+    elif format == 'json':
+        style = gendiff.jsonize(diff)
     return style

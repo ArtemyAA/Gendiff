@@ -10,11 +10,11 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0be990c6c95df4a551e7/test_coverage)](https://codeclimate.com/github/ArtemyAA/python-project-50/test_coverage)
 
-#### Parsing JSON-files
+#### Parsing float JSON-files
 
 [![asciicast](https://asciinema.org/a/632924.svg)](https://asciinema.org/a/632924)
 
-#### Parsing YAML-files
+#### Parsing float YAML-files
 
 [![asciicast](https://asciinema.org/a/633254.svg)](https://asciinema.org/a/633254)
 
@@ -22,6 +22,10 @@
 
 [![asciicast](https://asciinema.org/a/634501.svg)](https://asciinema.org/a/634501)
 
-### PLAIN format for trees
+#### PLAIN format for trees
 
 [![asciicast](https://asciinema.org/a/634774.svg)](https://asciinema.org/a/634774)
+
+#### JSON format for trees
+
+[![asciicast](https://asciinema.org/a/635456.svg)](https://asciinema.org/a/635456)
