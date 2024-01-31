@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/ArtemyAA/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ArtemyAA/python-project-50/actions)
 
-### GitActions tets and lint status
+### GitActions tests and lint status
 
 [![Python CI](https://github.com/ArtemyAA/python-project-50/actions/workflows/Python_CI.yml/badge.svg)](https://github.com/ArtemyAA/python-project-50/actions/workflows/Python_CI.yml)
 

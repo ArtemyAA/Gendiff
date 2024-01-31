@@ -12,5 +12,5 @@ def make_diff(data1, data2): # noqa C901
         elif key in data1 and key in data2 and data1[key] == data2[key]:
             diff[key] = {'status': 'unchanged', 'content': data2[key]}
         elif key in data1 and key in data2 and data1[key] != data2[key]:
-            diff[key] = {'status': 'changed', 'from': data1[key], 'to': data2[key]} # noqa E501
+            diff[key] = {'status': 'changed', 'from': data1[key],'to': data2[key]} # noqa E501
     return diff
