@@ -10,6 +10,23 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0be990c6c95df4a551e7/test_coverage)](https://codeclimate.com/github/ArtemyAA/python-project-50/test_coverage)
 
+This **package** is a CLI, which allows user **to parse** two different datas from files in three formats.
+
+Types of files allowed:
+
+- *.json* files;
+- *.yaml* or *.yml* files;
+
+#### FAQ
+
+Install the package
+`pip install git@github.com:ArtemyAA/python-project-50.git --user`
+
+Start the programm with
+`gendiff [-h] [-f] *needed format* tests/fixtures/YOUR-FILE1 tests/fixtures/YOUR-FILE2`
+
+Below you can see the examples of using the parser.
+
 #### Parsing float JSON-files
 
 [![asciicast](https://asciinema.org/a/632924.svg)](https://asciinema.org/a/632924)

@@ -3,74 +3,25 @@ import pytest
 import os
 
 
-@pytest.fixture
-def fixtures_path():
-    return os.path.join("tests", "fixtures")
+def create_path(file_name):
+    return os.path.join("tests", "fixtures", file_name)
 
 
-def test_for_json(fixtures_path):
-    first_file = os.path.join(fixtures_path, "file1.json")
-    second_file = os.path.join(fixtures_path, "file2.json")
-    answer = os.path.join(fixtures_path, 'answer.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file) == expected.read()
+def read_txt_file(file_name):
+    with open(create_path(file_name)) as file:
+        result = file.read()
+    return result
 
 
-def test_for_yaml(fixtures_path):
-    first_file = os.path.join(fixtures_path, "file1.yaml")
-    second_file = os.path.join(fixtures_path, "file2.yaml")
-    answer = os.path.join(fixtures_path, 'answer.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file) == expected.read()
-
-
-def test_for_trees_json(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.json")
-    second_file = os.path.join(fixtures_path, "tree2.json")
-    answer = os.path.join(fixtures_path, 'answer_trees.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file) == expected.read()
-
-
-def test_for_trees_yaml(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.yaml")
-    second_file = os.path.join(fixtures_path, "tree2.yaml")
-    answer = os.path.join(fixtures_path, 'answer_trees.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file) == expected.read()
-
-
-def test_for_plain_format_yaml(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.yaml")
-    second_file = os.path.join(fixtures_path, "tree2.yaml")
-    answer = os.path.join(fixtures_path, 'answer_plain.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file, format='plain') \
-        == expected.read()
-
-
-def test_for_plain_format_json(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.json")
-    second_file = os.path.join(fixtures_path, "tree2.json")
-    answer = os.path.join(fixtures_path, 'answer_plain.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file, format='plain') \
-        == expected.read()
-
-
-def test_for_format_json_with_yaml(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.json")
-    second_file = os.path.join(fixtures_path, "tree2.json")
-    answer = os.path.join(fixtures_path, 'answer_json.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file, format='json') \
-        == expected.read()
-
-
-def test_for_format_json(fixtures_path):
-    first_file = os.path.join(fixtures_path, "tree1.yaml")
-    second_file = os.path.join(fixtures_path, "tree2.yaml")
-    answer = os.path.join(fixtures_path, 'answer_json.txt')
-    expected = open(answer, 'r')
-    assert generate_diff(first_file, second_file, format='json') \
-        == expected.read()
+@pytest.mark.parametrize('input1,input2,format,expected', [
+    ('file1.json', 'file2.json', 'stylish', 'answer.txt'),
+    ('file1.yaml', 'file2.yaml', 'stylish', 'answer.txt'),
+    ('tree1.json', 'tree2.json', 'stylish', 'answer_trees.txt'),
+    ('tree1.yaml', 'tree2.yaml', 'stylish', 'answer_trees.txt'),
+    ('tree1.json', 'tree2.json', 'plain', 'answer_plain.txt'),
+    ('tree1.yaml', 'tree2.yaml', 'plain', 'answer_plain.txt'),
+    ('tree1.json', 'tree2.json', 'json', 'answer_json.txt'),
+    ('tree1.yaml', 'tree2.yaml', 'json', 'answer_json.txt')])
+def test_for_json(input1, input2, format, expected):
+    assert generate_diff(create_path(input1), create_path(input2), format)\
+        == read_txt_file(expected)

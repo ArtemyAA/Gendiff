@@ -10,7 +10,7 @@ def convert(value):
     return f"'{str(value)}'"
 
 
-def plainize(diff_tree, path=''): # noqa C901
+def plainize(diff_tree, path=''):
     result = []
     for key, element in diff_tree.items():
         element_status = element.get('status')
@@ -18,7 +18,7 @@ def plainize(diff_tree, path=''): # noqa C901
         value_from = element.get('from')
         value_to = element.get('to')
         new_path = path + ('.' if path else '') + key
-        if element_status == 'directory':
+        if element_status == 'nested':
             result.append(plainize(value, new_path))
         elif element_status == 'added':
             result.append(f'Property {convert(new_path)} \
@@ -28,6 +28,6 @@ was added with value: {convert(value)}')
         elif element_status == 'changed':
             result.append(f'Property {convert(new_path)} was updated. \
 From {convert(value_from)} to {convert(value_to)}')
-        elif element_status == 'unchanged':
+        else:
             continue
     return '\n'.join(result)

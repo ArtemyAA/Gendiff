@@ -1,6 +1,6 @@
 {
     "common": {
-        "status": "directory",
+        "status": "nested",
         "content": {
             "follow": {
                 "status": "added",
@@ -30,10 +30,10 @@
                 }
             },
             "setting6": {
-                "status": "directory",
+                "status": "nested",
                 "content": {
                     "doge": {
-                        "status": "directory",
+                        "status": "nested",
                         "content": {
                             "wow": {
                                 "status": "changed",
@@ -55,7 +55,7 @@
         }
     },
     "group1": {
-        "status": "directory",
+        "status": "nested",
         "content": {
             "baz": {
                 "status": "changed",
