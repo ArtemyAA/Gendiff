@@ -1,10 +1,14 @@
-from gendiff import stylize, jsonize, plainize
+import gendiff.formatters.json as json
+import gendiff.formatters.stylish as stylish
+import gendiff.formatters.plain as plain
 
 
 def format_data(difference, format):
     if format == 'stylish':
-        return stylize(difference)
+        return stylish.stylize(difference)
     elif format == 'json':
-        return jsonize(difference)
+        return json.jsonize(difference)
     elif format == 'plain':
-        return plainize(difference)
+        return plain.plainize(difference)
+    else:
+        raise ValueError(f"Unsupported format")

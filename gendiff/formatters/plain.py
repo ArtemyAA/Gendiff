@@ -1,4 +1,4 @@
-def convert(value):
+def to_str(value):
     if isinstance(value, bool):
         return str(value).lower()
     elif value is None:
@@ -21,13 +21,11 @@ def plainize(diff_tree, path=''):
         if element_status == 'nested':
             result.append(plainize(value, new_path))
         elif element_status == 'added':
-            result.append(f'Property {convert(new_path)} \
-was added with value: {convert(value)}')
+            result.append(f'Property {to_str(new_path)} \
+was added with value: {to_str(value)}')
         elif element_status == 'removed':
-            result.append(f'Property {convert(new_path)} was removed')
+            result.append(f'Property {to_str(new_path)} was removed')
         elif element_status == 'changed':
-            result.append(f'Property {convert(new_path)} was updated. \
-From {convert(value_from)} to {convert(value_to)}')
-        else:
-            continue
+            result.append(f'Property {to_str(new_path)} was updated. \
+From {to_str(value_from)} to {to_str(value_to)}')
     return '\n'.join(result)
