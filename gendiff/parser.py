@@ -6,7 +6,7 @@ import os
 def parse_extension(content, extension):
     if extension == 'json':
         return json.load(content)
-    elif extension == 'yaml':
+    elif extension == 'yaml' or extension == 'yml':
         return yaml.safe_load(content)
     else:
         raise ValueError(f"Unsupported extension: {extension}")
