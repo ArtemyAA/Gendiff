@@ -11,4 +11,4 @@ def format_data(difference, format):
     elif format == 'plain':
         return plain.plainize(difference)
     else:
-        raise ValueError(f"Unsupported format")
+        raise ValueError("Unsupported format")
