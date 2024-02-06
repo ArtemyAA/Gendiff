@@ -8,7 +8,7 @@ def build_fixture_path(file_name):
 
 
 def read_content(file_name):
-    with open(os.path.join('tests', 'fixtures', file_name)) as file:
+    with open(file_name) as file:
         result = file.read()
         return result
 
@@ -27,4 +27,4 @@ def test_for_gendiff(input1, input2, format, expected):
         build_fixture_path(input1),
         build_fixture_path(input2),
         format
-    ) == read_content(expected)
+    ) == read_content(build_fixture_path(expected))

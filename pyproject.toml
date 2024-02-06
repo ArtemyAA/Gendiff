@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "This is a CLI that allows user to see difference between two files in three formats"
 authors = ["Artemy Ablaev <artemyablaev.gmail.com>"]
 readme = "README.md"
 packages = [

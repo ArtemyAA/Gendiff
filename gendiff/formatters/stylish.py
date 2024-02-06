@@ -1,4 +1,8 @@
-def to_string(data, depth=1, space_count=4, fullfill=' '):
+SPACES = 4
+FULLFILL = ' '
+
+
+def to_string(data, depth=1, space_count=SPACES, fullfill=FULLFILL):
     if isinstance(data, bool):
         return str(data).lower()
     elif data is None:
@@ -13,7 +17,7 @@ def to_string(data, depth=1, space_count=4, fullfill=' '):
     return data
 
 
-def stylize(diff_tree, depth=0, space_count=4, fullfill=' '):
+def stylize(diff_tree, depth=0, space_count=SPACES, fullfill=FULLFILL):
     result = ['{']
     indent = space_count * depth
     space = indent * fullfill
