@@ -10,6 +10,4 @@ files and shows a difference.')
                         default='stylish',
                         choices=['stylish', 'plain', 'json'],
                         help='see format of output')
-    return parser.parse_args().first_file, \
-        parser.parse_args().second_file, \
-        parser.parse_args().format
+    return parser.parse_args()

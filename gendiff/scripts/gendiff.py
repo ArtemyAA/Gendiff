@@ -4,8 +4,11 @@ from gendiff.cli import parse
 
 
 def main():
-    file1, file2, format = parse()
-    diff = generate_diff(file1, file2, format)
+    args = parse()
+    diff = generate_diff(
+        args.first_file,
+        args.second_file,
+        args.format)
     print(diff)
 
 
