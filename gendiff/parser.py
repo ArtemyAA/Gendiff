@@ -8,6 +8,7 @@ def parse_content(content, extension):
         return json.load(content)
     elif extension == 'yaml' or extension == 'yml':
         return yaml.safe_load(content)
+    raise ValueError(f"Unsupported extension: {extension}")
 
 
 def fetch_data(file_path):
