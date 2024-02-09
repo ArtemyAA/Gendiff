@@ -20,6 +20,7 @@ Types of files allowed:
 #### FAQ
 
 Install the package
+
 ```
 git clone https://github.com/ram-alb/python-project-50.git
 cd python-project-50
@@ -29,7 +30,10 @@ make package-install
 ```
 
 Start the programm with
-`gendiff [-h] [-f] *needed format* tests/fixtures/YOUR-FILE1 tests/fixtures/YOUR-FILE2`
+
+```
+gendiff [-h] [-f] *needed format* tests/fixtures/YOUR-FILE1 tests/fixtures/YOUR-FILE2
+```
 
 Below you can see the examples of using the parser.
 
