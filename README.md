@@ -20,7 +20,13 @@ Types of files allowed:
 #### FAQ
 
 Install the package
-`pip install git@github.com:ArtemyAA/python-project-50.git --user`
+```
+git clone https://github.com/ram-alb/python-project-50.git
+cd python-project-50
+make install
+make build
+make package-install
+```
 
 Start the programm with
 `gendiff [-h] [-f] *needed format* tests/fixtures/YOUR-FILE1 tests/fixtures/YOUR-FILE2`
